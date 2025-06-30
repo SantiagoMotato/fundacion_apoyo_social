@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@theme{
+  --font-michroma: "Michroma", sans-serif
+}
+
+@font-face{
+  font-family: BattlesbridgeDemo;
+  font-style: regular;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/BattlesbridgeDemoRegular.ttf") format("ttf");
+}
+
+@import "tailwindcss";
+
+@theme{
+  --font-battlesbridge: "Battlesbridge Demo"
+}
+
+@theme{
+  --font-standfordBreath: "Stanford Breath"
+}
+
+@theme{
+  --font-jura: "Jura"
+}
+
+@font-face {
+  font-family: 'Battlesbridge Demo';
+  src: url('./assets/fonts/BattlesbridgeDemoRegular.woff2') format('woff2'),
+      url('./assets/fonts/BattlesbridgeDemoRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Stanford Breath';
+  src: url('./assets/fonts/StanfordBreath-Regular.woff2') format('woff2'),
+      url('./assets/fonts/StanfordBreath-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jura';
+  src: url('./assets/fonts/Jura-Light.woff2') format('woff2'),
+      url('./assets/fonts/Jura-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
