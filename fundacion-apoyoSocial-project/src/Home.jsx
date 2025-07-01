@@ -1,10 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
 import { FaLocationDot } from "react-icons/fa6";
-import Navbar from './components/Navbar'
-import ReseniaHistoricaPage from './pages/reseniaHistoricaSection/ReseniaHistoricaPage'
-import MisionYVisionPage from './pages/misionVisionSection/MisionYVisionPage'
-import ValoresPages from './pages/valoresSection/ValoresPage'
-import InformacionVeinteCuatro from './pages/informacion2024/InformacionVeinteCuatro'
 import ContenidoUno from './pages/contenidoHome/contenidoUno'
 
 function Home() {
@@ -76,17 +71,6 @@ function Home() {
     <section className='relative mb-3 bg-[#fdfdfd]/31' ref={quienesSomosSectionRef}> 
       <ContenidoUno/>
     </section>
-    {/*    
-    <section className='h-screen relative bg-[#ffffff]' ref={nuestroSectionRef}>
-      <MisionYVisionPage/>
-    </section>
-
-    <section className='relative bg-[#fafafa]' ref={trabajaConNosotrosSectionRef}>
-      <ValoresPages/>
-    </section> 
-    <section className='relative bg-[#fafafa]' ref={trabajaConNosotrosSectionRef}>
-      <InformacionVeinteCuatro/>
-    </section>  */}
   </>
 )
 
