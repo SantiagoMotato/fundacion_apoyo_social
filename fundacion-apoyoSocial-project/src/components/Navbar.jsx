@@ -36,9 +36,13 @@ function Navbar({ onLinkClick }) {
     <nav className="px-8 py-4 w-full bg-white fixed top-0 left-0 z-50 shadow-md">
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="w-20 sm:w-24">
-          <img src="/images/apoyoSocial.jpg" alt="Logo de apoyo social" className="w-full h-full object-contain" />
-        </div>
+         <Link to="/" className="w-20 sm:w-24">
+          <img
+            src="/images/apoyoSocial.jpg"
+            alt="Logo de apoyo social"
+            className="w-full h-full object-contain cursor-pointer"
+          />
+        </Link>
 
         {/* Ícono menú móvil */}
         <div className="sm:hidden text-2xl text-gray-600" onClick={() => setMenuOpen(!menuOpen)}>
