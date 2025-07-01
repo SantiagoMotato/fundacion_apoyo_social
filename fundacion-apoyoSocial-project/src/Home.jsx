@@ -4,6 +4,8 @@ import Navbar from './components/Navbar'
 import ReseniaHistoricaPage from './pages/reseniaHistoricaSection/ReseniaHistoricaPage'
 import MisionYVisionPage from './pages/misionVisionSection/MisionYVisionPage'
 import ValoresPages from './pages/valoresSection/ValoresPage'
+import InformacionVeinteCuatro from './pages/informacion2024/InformacionVeinteCuatro'
+import ContenidoUno from './pages/contenidoHome/contenidoUno'
 
 function Home() {
 
@@ -36,14 +38,14 @@ function Home() {
 
   return (
   <>
-    <section className="min-h-screen w-full bg-[#D2F5FF]/20" ref={homeSectionRef}>
-      <nav className="fixed top-0 left-0 w-full z-50 shadow-md">
-        <Navbar textColorClass='text-amber-50' onLinkClick={handleScrollToSection} />
-      </nav>
+    <section className="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: "url('/images/KidsBackgound.jpg')" }} ref={homeSectionRef}>
 
-      <main className="flex justify-start items-center w-full h-screen pt-20 px-4 sm:px-8">
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-[113%] bg-black/30 z-0"></div>
+
+      <main className="relative z-10 flex justify-start items-center w-full h-screen px-4 sm:px-8">
         <div className="max-w-[750px] text-center sm:text-left">
-          <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-gray-700">
+          <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-white">
             Trabajamos para mejorar la calidad de vida de comunidades vulnerables, ofreciendo soluciones sostenibles e integrales. Unimos esfuerzos con aliados públicos y privados para generar un impacto social positivo, promoviendo la inclusión, el desarrollo y la solidaridad.
           </p>
           <div className="mt-5">
@@ -62,8 +64,8 @@ function Home() {
             rel="noopener noreferrer"
             className="flex items-center text-center"
           >
-            <FaLocationDot className="text-base sm:text-lg md:text-xl lg:text-2xl mx-2 text-gray-500" />
-            <p className="text-gray-500 hover:underline active:scale-90 transition">
+            <FaLocationDot className="text-base sm:text-lg md:text-xl lg:text-2xl mx-2 text-white" />
+            <p className="text-white hover:underline active:scale-90 transition">
               Cra 15 #9A - 04, Barrio Cálamo. Pitalito - Huila, Colombia
             </p>
           </a>
@@ -72,9 +74,9 @@ function Home() {
     </section>
 
     <section className='relative mb-3 bg-[#fdfdfd]/31' ref={quienesSomosSectionRef}> 
-      <ReseniaHistoricaPage/>
+      <ContenidoUno/>
     </section>
-        
+    {/*    
     <section className='h-screen relative bg-[#ffffff]' ref={nuestroSectionRef}>
       <MisionYVisionPage/>
     </section>
@@ -82,6 +84,9 @@ function Home() {
     <section className='relative bg-[#fafafa]' ref={trabajaConNosotrosSectionRef}>
       <ValoresPages/>
     </section> 
+    <section className='relative bg-[#fafafa]' ref={trabajaConNosotrosSectionRef}>
+      <InformacionVeinteCuatro/>
+    </section>  */}
   </>
 )
 

@@ -1,15 +1,36 @@
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaTiktok, FaBars, FaTimes } from "react-icons/fa";
 import { MdOutlineWhatsapp } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 
 function Navbar({ onLinkClick }) {
+
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const closeTimeoutRef = useRef(null);
+
+  const isActive = (path) => location.pathname === path;
+  
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    setSubmenuOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setSubmenuOpen(false);
+    }, 700); // Tiempo de retardo en milisegundos
+  };
+    
 
   const handleLinkClick = (item) => {
     onLinkClick(item);
     setMenuOpen(false);
   };
+  
 
   return (
     <nav className="px-8 py-4 w-full bg-white fixed top-0 left-0 z-50 shadow-md">
@@ -39,8 +60,8 @@ function Navbar({ onLinkClick }) {
             <span>Correo: funapoyosocial@gmail.com</span>
           </div>
 
-          <ul className="flex gap-6 mt-2 text-gray-500 font-semibold">
-            {["Quienes somos?", "Nuestro trabajo", "Trabaja con nosotros", "Programas"].map((item) => (
+          {/* <ul className="flex gap-6 mt-2 text-gray-500 font-semibold uppercase relative">
+            {["Quienes somos?", "Nuestro trabajo", "Trabaja con nosotros"].map((item) => (
               <li
                 key={item}
                 onClick={() => handleLinkClick(item)}
@@ -49,6 +70,71 @@ function Navbar({ onLinkClick }) {
                 {item}
               </li>
             ))}
+
+            
+            <li
+              className="relative cursor-pointer"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="flex items-center gap-1 hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition">
+                Selección de transparencia
+                <IoIosArrowDown className="text-base" />
+              </div>
+
+              {submenuOpen && (
+                <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 z-50 text-gray-600 text-sm normal-case min-w-[200px]">
+                  <li
+                    onClick={() => handleLinkClick("Informes financieros")}
+                    className="px-4 py-2 hover:bg-gray-100 rounded transition"
+                  >
+                    Información ESAL
+                  </li>
+                </ul>
+              )}
+            </li>
+          </ul> */}
+          <ul className="flex gap-6 mt-2 text-gray-500 font-semibold uppercase relative">
+            <li>
+              <Link to="/" className={`hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer ${isActive("/") ? "text-blue-600" : ""}`}>
+                Inicio
+              </Link>
+            </li>
+            <li>
+              <Link to="/resena-historica" className={`hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer ${isActive("/resena-historica") ? "text-blue-600" : ""}`}>
+                Quienes somos?
+              </Link>
+            </li>
+            <li>
+              <Link to="/mision-vision" className={`hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer ${isActive("/mision-vision") ? "text-blue-600" : ""}`}>
+                Nuestro trabajo
+              </Link>
+            </li>
+            <li>
+              <Link to="/valores" className={`hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer ${isActive("/valores") ? "text-blue-600" : ""}`}>
+                Trabaja con nosotros
+              </Link>
+            </li>
+            <li className="relative">
+              <div
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="flex items-center gap-1 hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer"
+              >
+                Selección de transparencia
+                <IoIosArrowDown className="text-base" />
+              </div>
+
+              {submenuOpen && (
+                <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 z-50 text-gray-600 text-sm normal-case min-w-[200px]">
+                  <li>
+                    <Link to="/informacion-esal" className="px-4 py-2 hover:bg-gray-100 rounded block">
+                      Información ESAL
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
           </ul>
         </div>
       </div>
@@ -66,16 +152,52 @@ function Navbar({ onLinkClick }) {
             <p>Contácto: 3187116546</p>
             <p>Correo: funapoyosocial@gmail.com</p>
           </div>
-          <ul className="flex flex-col items-center gap-2">
-            {["Quienes somos?", "Nuestro trabajo", "Trabaja con nosotros", "Programas"].map((item) => (
-              <li
-                key={item}
-                onClick={() => handleLinkClick(item)}
-                className="hover:text-blue-500 cursor-pointer"
+          <ul className="flex flex-col items-center gap-2 uppercase text-gray-700 font-semibold">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-blue-500 cursor-pointer flex items-center gap-1"
+                onClick={() => setMenuOpen(false)}
               >
-                {item}
-              </li>
-            ))}
+                Inicio
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/resena-historica"
+                className="hover:text-blue-500 cursor-pointer flex items-center gap-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                Quienes somos?
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/mision-vision"
+                className="hover:text-blue-500 cursor-pointer flex items-center gap-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                Nuestro trabajo
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/valores"
+                className="hover:text-blue-500 cursor-pointer flex items-center gap-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                Trabaja con nosotros
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/informacion-esal"
+                className="hover:text-blue-500 cursor-pointer flex items-center gap-1"
+                onClick={() => setMenuOpen(false)}
+              >
+                Información ESAL
+              </Link>
+            </li>
           </ul>
         </div>
       )}

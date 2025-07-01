@@ -3,7 +3,7 @@ function ValoresPages() {
   return (
     <>
       <main className="w-full min-h-[100vh] italic border-t border-t-stone-300">
-        <section className='px-4 sm:px-6 md:px-12 pt-10'>
+        <section className='mt-5 md:mt-16 px-4 sm:px-6 md:px-12 pt-10'>
           <div className='flex flex-col'>
             <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold text-[#474747] mb-8'>
               Valores de la Fundación Apoyo Social
@@ -34,16 +34,6 @@ function ValoresPages() {
           </div>
         </section>
 
-        <footer className='w-full h-full mt-10 pt-5 bg-white border-t border-gray-200'>
-          <div className='flex flex-col justify-center items-center w-full h-full text-sm sm:text-base gap-3 px-4'>
-            <div className='w-24 h-24'>
-              <img src="/images/apoyoSocial.jpg" alt="Logo Fundación Apoyo Social" className='w-full h-full object-contain' />
-            </div>
-            <p className='text-gray-500 text-center'>
-              © Copyright 2025 | Todos los derechos reservados
-            </p>
-          </div>
-        </footer>
       </main>
     </>
   )

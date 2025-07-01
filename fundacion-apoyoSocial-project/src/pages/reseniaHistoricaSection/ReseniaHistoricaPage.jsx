@@ -1,11 +1,12 @@
+import ContenidoDos from '../contenidoHome/contenidoDos'
 
 function ReseniaHistoricaPage() {
   return (
     <>
-      <main className='min-h-screen bg-white text-[#474747] pb-40'>
+      <main className='min-h-screen bg-white text-[#474747]'>
         <div className='relative top-20 w-full px-4 sm:px-6 md:px-12 lg:px-24 font-bold'>
           <div className='max-w-4xl mx-auto'>
-            <h1 className='mb-6 text-2xl sm:text-3xl md:text-4xl'>
+            <h1 className='sm:mb-6  text-2xl sm:text-3xl md:text-4xl'>
               Reseña Histórica de la Fundación Apoyo Social:
             </h1>
 
@@ -29,6 +30,10 @@ function ReseniaHistoricaPage() {
           </div>
         </div>
       </main>
+
+      <section className='relative mb-3 bg-[#fdfdfd]/31'> 
+        <ContenidoDos/>
+      </section>
     </>
   )
 }
