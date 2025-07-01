@@ -41,7 +41,7 @@ function Home() {
     <section className="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: "url('/images/KidsBackgound.jpg')" }} ref={homeSectionRef}>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-[113%] bg-black/30 z-0"></div>
+      <div className="absolute top-0 left-0 w-full h-[113%] bg-black/30 z-0 pointer-events-none"></div>
 
       <main className="relative z-10 flex justify-start items-center w-full h-screen px-4 sm:px-8">
         <div className="max-w-[750px] text-center sm:text-left">
@@ -56,7 +56,7 @@ function Home() {
         </div>
       </main>
 
-      <footer className="absolute bottom-8 left-1/2 -translate-x-1/2 px-4 w-full sm:w-auto">
+      <footer className="absolute bottom-8 left-1/2 -translate-x-1/2 px-4 w-full sm:w-auto z-10">
         <div className="mx-auto w-full sm:w-auto flex justify-center items-center text-xs sm:text-sm md:text-md lg:text-base max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
           <a
             href="https://www.google.com/maps/place/Cra.+15+%23+9A-4,+Pitalito,+Huila"

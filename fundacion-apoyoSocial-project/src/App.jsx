@@ -24,15 +24,3 @@ function App() {
 }
 
 export default App
-
-// function App() {
-//   return (
-//     <div>
-//       <Home/>
-//     </div>
-//   )
-// }
-
-// export default App
-
-

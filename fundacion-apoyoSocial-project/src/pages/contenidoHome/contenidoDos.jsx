@@ -29,7 +29,7 @@ function ContenidoDos() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto mt-12 md:mt-2 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="max-w-7xl mx-auto mt-22 md:mt-24 lg:mt-28 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {items.map((item, index) => (
         <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:scale-110 p-3 transition">
           <img src={item.image} alt={item.title} className="w-full h-56 object-cover rounded-lg" />

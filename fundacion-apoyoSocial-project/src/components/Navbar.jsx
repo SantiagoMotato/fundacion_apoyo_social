@@ -64,40 +64,6 @@ function Navbar({ onLinkClick }) {
             <span>Correo: funapoyosocial@gmail.com</span>
           </div>
 
-          {/* <ul className="flex gap-6 mt-2 text-gray-500 font-semibold uppercase relative">
-            {["Quienes somos?", "Nuestro trabajo", "Trabaja con nosotros"].map((item) => (
-              <li
-                key={item}
-                onClick={() => handleLinkClick(item)}
-                className="hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer"
-              >
-                {item}
-              </li>
-            ))}
-
-            
-            <li
-              className="relative cursor-pointer"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="flex items-center gap-1 hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition">
-                Selección de transparencia
-                <IoIosArrowDown className="text-base" />
-              </div>
-
-              {submenuOpen && (
-                <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 z-50 text-gray-600 text-sm normal-case min-w-[200px]">
-                  <li
-                    onClick={() => handleLinkClick("Informes financieros")}
-                    className="px-4 py-2 hover:bg-gray-100 rounded transition"
-                  >
-                    Información ESAL
-                  </li>
-                </ul>
-              )}
-            </li>
-          </ul> */}
           <ul className="flex gap-6 mt-2 text-gray-500 font-semibold uppercase relative">
             <li>
               <Link to="/" className={`hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer ${isActive("/") ? "text-blue-600" : ""}`}>
@@ -125,12 +91,12 @@ function Navbar({ onLinkClick }) {
                 onMouseLeave={handleMouseLeave}
                 className="flex items-center gap-1 hover:text-blue-500/80 hover:underline hover:underline-offset-4 active:scale-75 transition cursor-pointer"
               >
-                Selección de transparencia
+                Transparencia
                 <IoIosArrowDown className="text-base" />
               </div>
 
               {submenuOpen && (
-                <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 z-50 text-gray-600 text-sm normal-case min-w-[200px]">
+                <ul className="absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md p-2 z-50 text-gray-600 text-sm normal-case min-w-[150px]">
                   <li>
                     <Link to="/informacion-esal" className="px-4 py-2 hover:bg-gray-100 rounded block">
                       Información ESAL
